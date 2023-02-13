@@ -2,15 +2,13 @@
 
 ## Abstract
 
+Q-learning is one the most powerful tabular algorithms that can tackle acute, optimization problems using Bellman equations. However, this algorithm has some disadvantages such as lack of safety when choosing an action. In fact, when this method takes an actions from the action space, it does not make sure what the consequense of the chosen actions is and tries to take actions blindly. In this project, we aim to solve this problem using symbolic logic programming. Indeed, in each state, we try to remove those actions which have a negative conqesuence using Prolog Programming and PySwip interface.
 
 ## Maze Environment
 
-
-# State Transition in Maze using Aleph
-
 ![image](https://github.com/98210184/Symbolic-Reinforcement-Learning-Prolog-Programming/blob/main/maze5x5.png)
 
-## Language Settings
+### Prolog Language Settings
 #### Mode Declaration and Background Knowledge
 
 #### States
@@ -83,3 +81,6 @@ from pyswip import Prolog
 prolog = Prolog()
 prolog.consult('choosing_action_maze.pl')
 ```
+
+### Q-Learning
+
