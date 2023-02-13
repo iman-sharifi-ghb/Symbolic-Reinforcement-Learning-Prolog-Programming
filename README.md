@@ -83,3 +83,5 @@ wall((3,3)).
 
 not_wall(X):-not(wall(X)).
 ```
+
+iman
