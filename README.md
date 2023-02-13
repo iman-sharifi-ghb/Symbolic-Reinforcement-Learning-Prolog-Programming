@@ -82,5 +82,60 @@ prolog = Prolog()
 prolog.consult('choosing_action_maze.pl')
 ```
 
-### Q-Learning
+#### Import Safe actions to Python
+```
+def safe_actions(state):
+    X, Y = state[0], state[1]
+    input = "safe_actions(("+str(X)+","+str(Y)+"),Actions)"
+    L = list(prolog.query(input))
+    
+    Actions = []
+    for action in L[0]['Actions']:
+        Actions.append(str(action))
+    return Actions
+```
 
+### Symbolic Q-Learning
+```
+for episode in range(num_episodes):
+    state = (0, 0) # Start from a start state
+    done = False
+    episode_reward = 0
+
+    for step in range(max_steps_per_episode):
+        
+        if sq == 1:
+            actions = safe_actions(state)
+            print(f"State: {state}, Possible Actions: {actions}. \n")
+
+        if random.uniform(0, 1) < exploration_rate:
+            action = random.choice(actions)
+        else:
+            act = np.argmax(list(q_table[(state, a)] for a in actions))
+            action = actions[act]
+
+        next_state = NextState(state, action)
+        print(f"Chosen Action: {action}, Next State: {next_state}. \n")
+
+        reward = maze[next_state[0]][next_state[1]]
+        episode_reward += reward
+
+        q_value = q_table[(state, action)]
+        max_q_value = max(q_table[(next_state, a)] for a in actions)
+        new_q_value = (1 - learning_rate) * q_value + learning_rate * (reward + discount_rate * max_q_value)
+        q_table[(state, action)] = new_q_value
+
+        state = next_state
+
+        if reward == 10:
+            done = True
+            break
+
+    cumulative_reward.append(episode_reward)
+    exploration_rate = min_exploration_rate + (max_exploration_rate - min_exploration_rate) * np.exp(-exploration_decay_rate * episode)
+    print(f"Episode number {episode}, Cumulative Reward: {episode_reward}. ================================|| \n\n")
+```
+
+#### comparison of the rewards received by Q-Learning and Symbolic Q-Learning
+
+[image](https://github.com/98210184/Symbolic-Reinforcement-Learning-Prolog-Programming/blob/main/data/rewards-comparison.png)
