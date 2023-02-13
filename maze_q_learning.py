@@ -19,7 +19,7 @@ df = pd.DataFrame()
 
 def possible_actions(state):
     X, Y = state[0], state[1]
-    input = "possible_actions(("+str(X)+","+str(Y)+"),Actions)"
+    input = "safe_actions(("+str(X)+","+str(Y)+"),Actions)"
     L = list(prolog.query(input))
 
     Actions = []
