@@ -8,7 +8,7 @@
 
 # State Transition in Maze using Aleph
 
-![image](https://github.com/98210184/Inductive-Logic-Programming-using-Prolog-Programming-and-Aleph/blob/main/MazeEnv.png)
+![image](https://github.com/98210184/Symbolic-Reinforcement-Learning-Prolog-Programming/blob/main/maze5x5.png)
 
 ## Language Settings
 #### Mode Declaration and Determination
