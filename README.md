@@ -2,7 +2,7 @@
 
 ## Abstract
 
-Q-learning is one the most powerful tabular algorithms that can tackle acute, optimization problems using Bellman equations. However, this algorithm has some disadvantages such as lack of safety when choosing an action. In fact, when this method takes an actions from the action space, it does not make sure what the consequense of the chosen actions is and tries to take actions blindly. In this project, we aim to solve this problem using symbolic logic programming. Indeed, in each state, we try to remove those actions which have a negative conqesuence using Prolog Programming and PySwip interface.
+Q-learning is one the most powerful tabular algorithms that can tackle acute, optimization problems using Bellman equations. However, this algorithm has some disadvantages such as lack of safety when choosing an action. In fact, when this method takes an actions from the action space, it does not make sure what the consequense of the chosen actions is and tries to take actions blindly. In this project, we aim to solve this problem using symbolic logic programming. Indeed, in each state, we try to remove those actions which have a negative conqesuence using Prolog Programming and PySwip interface. By doing so, we bring the safety of the agent to the next level. Implementing the simulation in Python, we show that the symbolic Q-learning method can receive bigger rewards as compared to conventional Q-learing method.
 
 ## Maze Environment
 
