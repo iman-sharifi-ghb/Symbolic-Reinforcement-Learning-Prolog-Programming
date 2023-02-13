@@ -138,4 +138,4 @@ for episode in range(num_episodes):
 
 #### comparison of the rewards received by Q-Learning and Symbolic Q-Learning
 
-[image](https://github.com/98210184/Symbolic-Reinforcement-Learning-Prolog-Programming/blob/main/data/rewards-comparison.png)
+![image](https://github.com/98210184/Symbolic-Reinforcement-Learning-Prolog-Programming/blob/main/data/rewards-comparison.png)
