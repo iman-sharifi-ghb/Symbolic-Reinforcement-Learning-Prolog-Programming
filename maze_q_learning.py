@@ -17,7 +17,7 @@ prolog.consult('choosing_action_maze.pl')
 # create dataframe
 df = pd.DataFrame()
 
-def possible_actions(state):
+def safe_actions(state):
     X, Y = state[0], state[1]
     input = "safe_actions(("+str(X)+","+str(Y)+"),Actions)"
     L = list(prolog.query(input))
@@ -82,7 +82,7 @@ for episode in range(num_episodes):
     for step in range(max_steps_per_episode):
         
         if sq == 1:
-            actions = possible_actions(state)
+            actions = safe_actions(state)
             print(f"State: {state}, Possible Actions: {actions}. \n")
 
         if random.uniform(0, 1) < exploration_rate:
