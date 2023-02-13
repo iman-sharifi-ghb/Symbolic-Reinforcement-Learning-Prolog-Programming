@@ -71,3 +71,15 @@ remove_repeats(List, Result) :-
   
 safe_actions(State,Actions):-state(State),findall(Action,(adjacent(State,Action,NextState),not_wall(NextState)),L),remove_repeats(L,Actions).
 ```
+
+
+#### Connecting Python to Prolog
+
+In this section, we make use of [PySwip](https://pypi.org/project/pyswip/), as an interface between Python and Prolog, to import `choosing_action_maze.pl` file into python using the following commands:
+
+```
+from pyswip import Prolog
+
+prolog = Prolog()
+prolog.consult('choosing_action_maze.pl')
+```
